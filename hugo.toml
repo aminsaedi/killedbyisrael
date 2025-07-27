@@ -1,0 +1,77 @@
+baseURL = 'https://killedbyisrael.com/'
+title = 'Killed By Israel'
+theme = 'memorial'
+
+defaultContentLanguage = 'en'
+defaultContentLanguageInSubdir = false
+
+[languages]
+  [languages.en]
+    title = 'Killed By Israel'
+    languageName = 'English'
+    contentDir = 'content/en'
+    weight = 1
+    [languages.en.params]
+      languageCode = 'en-US'
+      languageAltTitle = 'Killed By Israel'
+      description = 'A memorial gallery honoring those who were killed by israel'
+  
+  [languages.fa]
+    title = 'گالری یادبود شهدا'
+    languageName = 'فارسی'
+    contentDir = 'content/fa'
+    weight = 2
+    languageDirection = 'rtl'
+    [languages.fa.params]
+      languageCode = 'fa-IR'
+      languageAltTitle = 'گالری یادبود شهدا'
+      description = 'گالری یادبود برای گرامیداشت کسانی که جان خود را فدا کردند'
+
+[params]
+  author = 'Amin Saedi'
+  instagram = 'https://instagram.com/killedbyisrael'
+  telegram = 'https://t.me/killedbyisrael'
+  github = 'https://github.com/aminsaedi/killedbyisrael'
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+[menu]
+  [[menu.main]]
+    name = 'Home'
+    url = '/'
+    weight = 1
+  
+  [[menu.main]]
+    name = 'About'
+    url = '/about/'
+    weight = 2
+
+[[languages.fa.menu.main]]
+  name = 'صفحه اصلی'
+  url = '/'
+  weight = 1
+
+[[languages.fa.menu.main]]
+  name = 'درباره ما'
+  url = '/about/'
+  weight = 2
+
+[sitemap]
+  changefreq = 'daily'
+  filename = 'sitemap.xml'
+  priority = 0.5
+
+[taxonomies]
+  category = 'categories'
+  tag = 'tags'
+
+[outputs]
+  home = ['HTML', 'RSS', 'JSON']
+  section = ['HTML', 'RSS']
+
+[services]
+  [services.googleAnalytics]
+    ID = ''  # Add your Google Analytics ID here

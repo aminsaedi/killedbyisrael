@@ -1,0 +1,467 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --primary-color: #1a1a1a;
+  --secondary-color: #666;
+  --background-color: #ffffff;
+  --card-background: #f8f8f8;
+  --border-color: #e0e0e0;
+  --text-color: #333;
+  --link-color: #0066cc;
+  --shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+  line-height: 1.6;
+  color: var(--text-color);
+  background-color: var(--background-color);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+body[dir="rtl"] {
+  font-family: 'Vazirmatn Variable', 'Vazirmatn', Tahoma, Arial, sans-serif !important;
+  direction: rtl;
+  font-weight: 400;
+}
+
+/* Force Vazirmatn on all RTL elements */
+[dir="rtl"],
+[dir="rtl"] * {
+  font-family: 'Vazirmatn Variable', 'Vazirmatn', Tahoma, Arial, sans-serif !important;
+}
+
+/* Adjust font weights for Farsi headings */
+body[dir="rtl"] h1,
+body[dir="rtl"] h2,
+body[dir="rtl"] h3,
+body[dir="rtl"] h4,
+body[dir="rtl"] h5,
+body[dir="rtl"] h6 {
+  font-weight: 700;
+}
+
+body[dir="rtl"] .site-title {
+  font-weight: 900;
+}
+
+body[dir="rtl"] .memorial-name {
+  font-weight: 600;
+}
+
+/* Better line height for Farsi text */
+body[dir="rtl"] p,
+body[dir="rtl"] .memorial-description {
+  line-height: 1.8;
+}
+
+/* Adjust letter spacing for Farsi */
+body[dir="rtl"] {
+  letter-spacing: 0;
+}
+
+/* Ensure numbers use Persian numerals in Farsi */
+body[dir="rtl"] {
+  font-feature-settings: "numr";
+}
+
+main {
+  flex: 1;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+header {
+  background-color: var(--primary-color);
+  color: white;
+  box-shadow: var(--shadow);
+}
+
+.header-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.site-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  transition: opacity 0.3s;
+}
+
+nav a:hover {
+  opacity: 0.8;
+}
+
+.language-switcher {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.language-switcher a {
+  padding: 0.25rem 0.5rem;
+  background-color: rgba(255,255,255,0.1);
+  border-radius: 4px;
+  color: white;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.language-switcher a:hover,
+.language-switcher a.active {
+  background-color: rgba(255,255,255,0.2);
+}
+
+footer {
+  background-color: var(--primary-color);
+  color: white;
+  margin-top: 2rem;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.social-links a {
+  color: white;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: opacity 0.3s;
+}
+
+.social-links a:hover {
+  opacity: 0.8;
+}
+
+/* Memorial Gallery Styles */
+.memorial-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.memorial-card {
+  background-color: var(--card-background);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.memorial-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.memorial-image {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+.memorial-content {
+  padding: 1rem;
+}
+
+.memorial-name {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: var(--primary-color);
+}
+
+.memorial-description {
+  color: var(--secondary-color);
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.page-content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.page-content h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: var(--primary-color);
+}
+
+.page-content h2 {
+  font-size: 1.5rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  color: var(--primary-color);
+}
+
+.page-content p {
+  margin-bottom: 1rem;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  html {
+    font-size: 14px;
+  }
+
+  .header-content {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  nav ul {
+    justify-content: center;
+  }
+
+  .memorial-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .page-content {
+    padding: 1rem;
+  }
+
+  .page-content h1 {
+    font-size: 1.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  nav ul {
+    gap: 1rem;
+  }
+
+  .social-links {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+/* Accessibility */
+a:focus,
+button:focus {
+  outline: 2px solid var(--link-color);
+  outline-offset: 2px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Image Carousel Styles */
+.carousel-container {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto 2rem;
+  background-color: var(--card-background);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.carousel-main {
+  position: relative;
+  width: 100%;
+  padding-bottom: 75%; /* 4:3 aspect ratio */
+  background-color: #000;
+}
+
+.carousel-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.carousel-image.active {
+  opacity: 1;
+}
+
+.carousel-controls {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 1rem;
+  pointer-events: none;
+}
+
+.carousel-button {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  pointer-events: all;
+  transition: background-color 0.3s;
+  font-size: 1.2rem;
+}
+
+.carousel-button:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.carousel-button:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.carousel-indicators {
+  position: absolute;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 0.5rem;
+}
+
+.carousel-indicator {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.5);
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.carousel-indicator.active {
+  background-color: white;
+}
+
+.carousel-thumbnails {
+  display: flex;
+  gap: 0.5rem;
+  padding: 1rem;
+  overflow-x: auto;
+  background-color: var(--card-background);
+}
+
+.carousel-thumbnail {
+  flex-shrink: 0;
+  width: 80px;
+  height: 80px;
+  border: 2px solid transparent;
+  border-radius: 4px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: border-color 0.3s;
+}
+
+.carousel-thumbnail.active {
+  border-color: var(--link-color);
+}
+
+.carousel-thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Mobile optimizations for carousel */
+@media (max-width: 768px) {
+  .carousel-button {
+    width: 35px;
+    height: 35px;
+    font-size: 1rem;
+  }
+  
+  .carousel-controls {
+    padding: 0 0.5rem;
+  }
+  
+  .carousel-indicators {
+    bottom: 0.5rem;
+  }
+  
+  .carousel-thumbnails {
+    padding: 0.5rem;
+  }
+  
+  .carousel-thumbnail {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+/* Touch swipe support */
+.carousel-main {
+  touch-action: pan-y pinch-zoom;
+}
+
+/* RTL support for carousel */
+body[dir="rtl"] .carousel-controls {
+  flex-direction: row-reverse;
+}
+
+body[dir="rtl"] .carousel-thumbnails {
+  direction: rtl;
+}
+
+body[dir="rtl"] .carousel-indicators {
+  direction: rtl;
+}

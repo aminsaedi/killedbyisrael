@@ -1,0 +1,95 @@
+{{ define "main" }}
+  <article class="page-content">
+    <h1>
+      {{ if eq site.Language.Lang "fa" }}
+        {{ .Params.fullname_fa | default .Title }}
+      {{ else }}
+        {{ .Params.fullname_en | default .Title }}
+      {{ end }}
+    </h1>
+    
+    {{ if or .Params.birthdate .Params.deathdate }}
+      <div style="font-size: 1.1rem; color: #666; margin-bottom: 2rem;">
+        {{ if .Params.birthdate }}
+          {{ .Params.birthdate | dateFormat "January 2, 2006" }} - 
+          {{ .Params.deathdate | dateFormat "January 2, 2006" }}
+          {{ if .Params.age }}
+            <br>
+            {{ if eq site.Language.Lang "fa" }}
+              سن: {{ .Params.age }} سال
+            {{ else }}
+              Age: {{ .Params.age }} years
+            {{ end }}
+          {{ end }}
+        {{ end }}
+      </div>
+    {{ end }}
+    
+    {{ if .Params.images }}
+      {{ $imageCount := len .Params.images }}
+      {{ if gt $imageCount 1 }}
+        <!-- Image Carousel for multiple images -->
+        <div class="carousel-container">
+          <div class="carousel-main">
+            {{ range $index, $image := .Params.images }}
+              <img src="{{ $image }}" alt="{{ $.Title }} - Photo {{ add $index 1 }}" 
+                   class="carousel-image{{ if eq $index 0 }} active{{ end }}" 
+                   loading="{{ if eq $index 0 }}eager{{ else }}lazy{{ end }}">
+            {{ end }}
+            
+            <!-- Navigation controls -->
+            <div class="carousel-controls">
+              <button class="carousel-button carousel-prev" aria-label="Previous image">
+                {{ if eq site.Language.Lang "fa" }}›{{ else }}‹{{ end }}
+              </button>
+              <button class="carousel-button carousel-next" aria-label="Next image">
+                {{ if eq site.Language.Lang "fa" }}‹{{ else }}›{{ end }}
+              </button>
+            </div>
+            
+            <!-- Indicators -->
+            <div class="carousel-indicators">
+              {{ range $index, $image := .Params.images }}
+                <button class="carousel-indicator{{ if eq $index 0 }} active{{ end }}" 
+                        aria-label="Go to image {{ add $index 1 }}"></button>
+              {{ end }}
+            </div>
+          </div>
+          
+          <!-- Thumbnails -->
+          {{ if gt $imageCount 2 }}
+            <div class="carousel-thumbnails">
+              {{ range $index, $image := .Params.images }}
+                <button class="carousel-thumbnail{{ if eq $index 0 }} active{{ end }}" 
+                        aria-label="View image {{ add $index 1 }}">
+                  <img src="{{ $image }}" alt="Thumbnail {{ add $index 1 }}">
+                </button>
+              {{ end }}
+            </div>
+          {{ end }}
+        </div>
+      {{ else }}
+        <!-- Single image -->
+        <div style="margin-bottom: 2rem;">
+          {{ range .Params.images }}
+            <img src="{{ . }}" alt="{{ $.Title }}" style="max-width: 100%; height: auto; border-radius: 8px;">
+          {{ end }}
+        </div>
+      {{ end }}
+    {{ end }}
+    
+    <div style="line-height: 1.8; margin-top: 2rem;">
+      {{ .Content }}
+    </div>
+    
+    <div style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid #e0e0e0;">
+      <a href="{{ "/" | relLangURL }}" style="color: var(--link-color);">
+        {{ if eq site.Language.Lang "fa" }}
+          ← بازگشت به گالری
+        {{ else }}
+          ← Back to Gallery
+        {{ end }}
+      </a>
+    </div>
+  </article>
+{{ end }}

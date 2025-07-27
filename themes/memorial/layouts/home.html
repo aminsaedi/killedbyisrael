@@ -1,0 +1,92 @@
+{{ define "main" }}
+  <div class="page-content">
+    <h1>
+      {{ if eq site.Language.Lang "fa" }}
+        گالری یادبود
+      {{ else }}
+        Memorial Gallery
+      {{ end }}
+    </h1>
+    
+    {{ with .Content }}
+      {{ . }}
+    {{ end }}
+  </div>
+
+  <div class="memorial-grid">
+    {{ $memorials := where site.RegularPages "Section" "memorials" }}
+    {{ range $memorials }}
+      <article class="memorial-card">
+        {{ $image := index .Params.images 0 }}
+        {{ if $image }}
+          <img src="{{ $image }}" alt="{{ .Title }}" class="memorial-image" loading="lazy">
+        {{ else }}
+          <div class="memorial-image" style="background-color: #ddd; display: flex; align-items: center; justify-content: center;">
+            <span style="color: #666;">{{ .Title }}</span>
+          </div>
+        {{ end }}
+        
+        <div class="memorial-content">
+          <h2 class="memorial-name">
+            <a href="{{ .RelPermalink }}" style="text-decoration: none; color: inherit;">
+              {{ if eq site.Language.Lang "fa" }}
+                {{ .Params.fullname_fa | default .Title }}
+              {{ else }}
+                {{ .Params.fullname_en | default .Title }}
+              {{ end }}
+            </a>
+          </h2>
+          
+          <div class="memorial-dates" style="font-size: 0.9rem; color: #666; margin-bottom: 0.5rem;">
+            {{ if or .Params.birthdate .Params.deathdate }}
+              {{ if .Params.birthdate }}
+                {{ .Params.birthdate | dateFormat "2006" }}
+              {{ else }}
+                {{ if eq site.Language.Lang "fa" }}؟{{ else }}?{{ end }}
+              {{ end }}
+              -
+              {{ if .Params.deathdate }}
+                {{ .Params.deathdate | dateFormat "2006" }}
+              {{ else }}
+                {{ if eq site.Language.Lang "fa" }}؟{{ else }}?{{ end }}
+              {{ end }}
+              {{ if .Params.age }}
+                {{ if ne .Params.age "" }}
+                  {{ if ne .Params.age "Unknown" }}
+                    {{ if ne .Params.age "نامعلوم" }}
+                      ({{ if eq site.Language.Lang "fa" }}{{ .Params.age }} سال{{ else }}Age {{ .Params.age }}{{ end }})
+                    {{ end }}
+                  {{ end }}
+                {{ end }}
+              {{ end }}
+            {{ else if .Params.age }}
+              {{ if ne .Params.age "" }}
+                {{ if ne .Params.age "Unknown" }}
+                  {{ if ne .Params.age "نامعلوم" }}
+                    {{ if eq site.Language.Lang "fa" }}سن: {{ .Params.age }} سال{{ else }}Age: {{ .Params.age }} years{{ end }}
+                  {{ else }}
+                    {{ if eq site.Language.Lang "fa" }}سن: نامعلوم{{ else }}Age: Unknown{{ end }}
+                  {{ end }}
+                {{ else }}
+                  {{ if eq site.Language.Lang "fa" }}سن: نامعلوم{{ else }}Age: Unknown{{ end }}
+                {{ end }}
+              {{ end }}
+            {{ end }}
+          </div>
+          
+          <p class="memorial-description">
+            {{ .Summary | truncate 150 }}
+          </p>
+          
+          <a href="{{ .RelPermalink }}" style="color: var(--link-color); font-size: 0.9rem;">
+            {{ if eq site.Language.Lang "fa" }}
+              ادامه مطلب ←
+            {{ else }}
+              Read more →
+            {{ end }}
+          </a>
+        </div>
+      </article>
+    {{ end }}
+  </div>
+{{ end }}

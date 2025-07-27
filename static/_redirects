@@ -1,0 +1,7 @@
+# Netlify redirects file (if using Netlify)
+# Redirect www to non-www
+https://www.example.org/* https://example.org/:splat 301!
+
+# Language redirects based on browser preference
+/  /en  302  Language=en
+/  /fa  302  Language=fa

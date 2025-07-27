@@ -1,0 +1,30 @@
+<div class="header-content">
+  <a href="{{ "/" | relLangURL }}" class="site-title">
+    {{ if eq site.Language.Lang "fa" }}
+      {{ site.Params.languageAltTitle | default site.Title }}
+    {{ else }}
+      {{ site.Title }}
+    {{ end }}
+  </a>
+  
+  <nav>
+    {{ partial "menu.html" (dict "menuID" "main" "page" .) }}
+  </nav>
+  
+  <div class="language-switcher">
+    {{ range $.Site.Home.AllTranslations }}
+      {{ $lang := .Language }}
+      {{ if eq $.Site.Language.Lang $lang.Lang }}
+        <a href="#" class="active">{{ $lang.LanguageName }}</a>
+      {{ else }}
+        {{ $translation := . }}
+        {{ range $.AllTranslations }}
+          {{ if eq .Language.Lang $lang.Lang }}
+            {{ $translation = . }}
+          {{ end }}
+        {{ end }}
+        <a href="{{ $translation.RelPermalink }}">{{ $lang.LanguageName }}</a>
+      {{ end }}
+    {{ end }}
+  </div>
+</div>

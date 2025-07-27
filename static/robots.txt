@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://example.org/sitemap.xml
+Sitemap: https://example.org/en/sitemap.xml
+Sitemap: https://example.org/fa/sitemap.xml

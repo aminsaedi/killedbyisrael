@@ -1,0 +1,131 @@
+{{ if .IsHome }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "{{ site.Title }}",
+  "alternateName": "{{ site.Params.languageAltTitle }}",
+  "url": "{{ .Permalink }}",
+  "description": "{{ site.Params.description }}",
+  "inLanguage": "{{ .Language.Lang }}",
+  "author": {
+    "@type": "Organization",
+    "name": "{{ site.Params.author }}"
+  }
+}
+</script>
+{{ else if eq .Type "memorials" }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "{{ if eq site.Language.Lang "fa" }}{{ .Params.fullname_fa | default .Title }}{{ else }}{{ .Params.fullname_en | default .Title }}{{ end }}",
+  "givenName": "{{ if eq site.Language.Lang "fa" }}{{ .Params.fullname_fa | default .Title }}{{ else }}{{ .Params.fullname_en | default .Title }}{{ end }}",
+  {{ if .Params.birthdate }}
+  "birthDate": "{{ .Params.birthdate }}",
+  {{ end }}
+  {{ if .Params.deathdate }}
+  "deathDate": "{{ .Params.deathdate }}",
+  {{ end }}
+  "description": "{{ .Summary | plainify | truncate 160 }}",
+  {{ with .Params.images }}{{ range first 1 . }}
+  "image": "{{ . | absURL }}",
+  {{ end }}{{ end }}
+  "url": "{{ .Permalink }}",
+  "@id": "{{ .Permalink }}#person",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "{{ .Permalink }}"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "{{ .Title }}",
+  "description": "{{ .Summary | plainify | truncate 160 }}",
+  {{ with .Params.images }}{{ range first 1 . }}
+  "image": "{{ . | absURL }}",
+  {{ end }}{{ end }}
+  "datePublished": "{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}",
+  "dateModified": "{{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" }}",
+  "author": {
+    "@type": "Organization",
+    "name": "{{ site.Params.author }}"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "{{ site.Title }}",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "{{ "images/logo.png" | absURL }}"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "{{ .Permalink }}"
+  },
+  "inLanguage": "{{ .Language.Lang }}",
+  "about": {
+    "@type": "Person",
+    "@id": "{{ .Permalink }}#person"
+  }
+}
+</script>
+{{ else if eq .Type "page" }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "{{ .Title }}",
+  "description": "{{ with .Description }}{{ . }}{{ else }}{{ .Summary | plainify | truncate 160 }}{{ end }}",
+  "url": "{{ .Permalink }}",
+  "inLanguage": "{{ .Language.Lang }}",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "{{ site.Title }}",
+    "url": "{{ site.BaseURL }}"
+  }
+}
+</script>
+{{ end }}
+
+<!-- BreadcrumbList for better navigation in search results -->
+{{ if not .IsHome }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "{{ if eq site.Language.Lang "fa" }}صفحه اصلی{{ else }}Home{{ end }}",
+      "item": "{{ site.BaseURL }}"
+    }
+    {{ if eq .Type "memorials" }}
+    ,{
+      "@type": "ListItem",
+      "position": 2,
+      "name": "{{ if eq site.Language.Lang "fa" }}یادبودها{{ else }}Memorials{{ end }}",
+      "item": "{{ "/memorials/" | absURL }}"
+    }
+    ,{
+      "@type": "ListItem",
+      "position": 3,
+      "name": "{{ .Title }}",
+      "item": "{{ .Permalink }}"
+    }
+    {{ else }}
+    ,{
+      "@type": "ListItem",
+      "position": 2,
+      "name": "{{ .Title }}",
+      "item": "{{ .Permalink }}"
+    }
+    {{ end }}
+  ]
+}
+</script>
+{{ end }}
