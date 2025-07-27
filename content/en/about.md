@@ -6,24 +6,25 @@ draft: false
 
 ## Our Mission
 
-This memorial gallery serves as a digital monument to honor those who made the ultimate sacrifice. We believe that every life lost deserves to be remembered, and every story deserves to be told.
+In every war, there are those who had no part in starting it, yet lose everything because of it. Every human being unjustly killed deserves to be remembered.
 
-## Why We Built This
+## Why We Created This Project
 
-In times of conflict, it's easy for individual stories to be lost in statistics. This memorial aims to preserve the memory of each person - their dreams, their contributions, and the love they shared with others. By remembering their stories, we honor their sacrifice and remind ourselves of the human cost of war.
+This memorial is a small effort to ensure that the faces, names, and real stories behind this war are not forgotten. It is a collective attempt to honor the innocent lives lost by remembering them as human beings caught in the midst of conflict.
 
 ## Open Source Project
 
-This memorial is built as a free and open-source project, available on [GitHub](https://github.com/yourusername/memorial-gallery). We believe that remembrance should be accessible to all, and we encourage communities around the world to create their own memorials using this platform.
+This memorial has been built as a free and open-source project, available on [GitHub](https://github.com/yourusername/memorial-gallery). We hope more people can use this platform to document and share the memory of these individuals.
 
 ## Contributing
 
-If you would like to add someone to this memorial or contribute to the project, please visit our GitHub repository. We welcome contributions that help us better honor those we've lost.
+We deeply appreciate your contributions to improve the website or report any issues.
+The information about those who have been lost was gathered from the Telegram channel [KilledByIsrael](https://t.me/KilledByIsrael).
+If you have any concerns regarding the names, please reach out to the channel directly.
 
-## Contact
+## Contact Us
 
-Follow us on social media to stay updated:
-- [Instagram](https://instagram.com/yourusername)
-- [Telegram](https://t.me/yourchannel)
-
+Follow us on social media:
+- [Instagram](https://instagram.com/KilledByIsrael2025)
+- [Telegram](https://t.me/KilledByIsrael)
 Together, we remember. Together, we honor.
