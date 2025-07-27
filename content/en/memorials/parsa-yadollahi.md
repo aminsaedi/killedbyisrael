@@ -6,7 +6,7 @@ fullname_en: "Parsa Yadollahi"
 fullname_fa: "پارسا یداللهی"
 birthdate: ""
 deathdate: ""
-age: ""
+age: "19"
 images:
   - "/images/memorials/parsa-yadollahi-1.png"
 ---
