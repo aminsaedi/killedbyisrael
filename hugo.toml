@@ -14,22 +14,22 @@ defaultContentLanguageInSubdir = false
     [languages.en.params]
       languageCode = 'en-US'
       languageAltTitle = 'Killed By Israel'
-      description = 'A memorial gallery honoring those who were killed by israel'
+      description = 'Addressing deceased loved ones is a common Iranian way of mourning. Here we honor those who were #killedByIsrael in its 2025 attack on Iran by addressing them.'
   
   [languages.fa]
-    title = 'گالری یادبود شهدا'
+    title = 'فرزندان ایران '
     languageName = 'فارسی'
     contentDir = 'content/fa'
     weight = 2
     languageDirection = 'rtl'
     [languages.fa.params]
       languageCode = 'fa-IR'
-      languageAltTitle = 'گالری یادبود شهدا'
-      description = 'گالری یادبود برای گرامیداشت کسانی که جان خود را فدا کردند'
+      languageAltTitle = 'فرزندان ایران '
+      description = 'یادبود ایرانیان کشته شده در حملات اسرائیل'
 
 [params]
   author = 'Amin Saedi'
-  instagram = 'https://instagram.com/killedbyisrael'
+  instagram = 'https://instagram.com/killedbyisrael2025'
   telegram = 'https://t.me/killedbyisrael'
   github = 'https://github.com/aminsaedi/killedbyisrael'
 
