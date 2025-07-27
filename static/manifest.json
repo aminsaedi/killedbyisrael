@@ -1,7 +1,7 @@
 {
-  "name": "War Memorial Gallery",
-  "short_name": "Memorial",
-  "description": "A memorial gallery honoring those who gave their lives",
+  "name": "Killed By Israel",
+  "short_name": "Killed By Israel",
+  "description": "Here we honor those who were #killedByIsrael in its 2025 attack on Iran by addressing them.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",
