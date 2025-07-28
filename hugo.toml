@@ -24,7 +24,7 @@ defaultContentLanguageInSubdir = false
     languageDirection = 'rtl'
     [languages.fa.params]
       languageCode = 'fa-IR'
-      languageAltTitle = 'فرزندان ایران '
+      languageAltTitle = 'فرزندان ایران'
       description = 'یادبود ایرانیان کشته شده در حملات اسرائیل'
 
 [params]
