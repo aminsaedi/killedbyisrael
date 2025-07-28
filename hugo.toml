@@ -32,6 +32,7 @@ defaultContentLanguageInSubdir = false
   instagram = 'https://instagram.com/killedbyisrael2025'
   telegram = 'https://t.me/killedbyisrael'
   github = 'https://github.com/aminsaedi/killedbyisrael'
+  description = 'Here we honor those who were #killedByIsrael in its 2025 attack on Iran by addressing them.'
 
 [markup]
   [markup.goldmark]
