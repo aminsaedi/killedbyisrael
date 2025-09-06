@@ -6,9 +6,9 @@ fullname_en: "Parsa Yadollahi"
 fullname_fa: "پارسا یداللهی"
 birthdate: ""
 deathdate: ""
-age: "19"
+age: "21"
 images:
   - "/images/memorials/parsa-yadollahi-1.png"
 ---
 
-Parsa Yadollahi, a 19-year-old conscript, was among dozens #KilledByIsrael in an attack on Evin Prison. A relative of his was a victim of Ukrainian Flight PS752 and Parsa himself was always a supporter of the justice-seeking families of the victims. Iran remembers and honors him.
+Parsa Yadollahi, a 21-year-old conscript, was among dozens #KilledByIsrael in an attack on Evin Prison. A relative of his was a victim of Ukrainian Flight PS752 and Parsa himself was always a supporter of the justice-seeking families of the victims. Iran remembers and honors him.

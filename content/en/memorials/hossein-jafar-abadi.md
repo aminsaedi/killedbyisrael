@@ -11,4 +11,4 @@ images:
   - "/images/memorials/hossein-jafar-abadi-1.png"
 ---
 
-Hossein Jafar Abadi, was a young Iranian engineer. He would post motivational and spiritual content on his popular social media pages. Those pages are silent now, because he was #KilledByIsrael in an attack on Tehran’s residential areas along with his mother, brother and sister.
+Hossein Jafar Abadi was a young Iranian engineer. He would post motivational and spiritual content on his popular social media pages. Those pages are silent now, because he was #KilledByIsrael in an attack on Tehran’s residential areas along with his mother, brother and sister.
