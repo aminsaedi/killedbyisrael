@@ -11,4 +11,4 @@ images:
   - "/images/memorials/pouyan-sereshti-1.png"
 ---
 
-Pouyan Sereshti, was a young conscript doing his national service at Evin prison. He would've had a future ahead of him, if he hadn’t been #KilledByIsrael during the so-called “symbolic” attack on Evin, which left a crater in what used to be the guards’ quarters. Iran honors him.
+Pouyan Sereshti was a young conscript doing his national service at Evin prison. He would've had a future ahead of him, if he hadn’t been #KilledByIsrael during the so-called “symbolic” attack on Evin, which left a crater in what used to be the guards’ quarters. Iran honors him.

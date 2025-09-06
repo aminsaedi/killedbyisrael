@@ -3,7 +3,7 @@ title: "Davood Shirvani"
 date: 2024-07-26
 draft: false
 fullname_en: "Davood Shirvani"
-fullname_fa: "دکتر داوود شیروانی بروجنی"
+fullname_fa: "داوود شیروانی بروجنی"
 birthdate: ""
 deathdate: ""
 age: ""

@@ -11,4 +11,4 @@ images:
   - "/images/memorials/mohammadamin-rouhbakhsh-1.png"
 ---
 
-Mohammadamin Rouhbakhsh, was a young conscript at Evin prison. He would’ve completed his service and discovered his future, if he hadn’t been #KilledByIsrael in a so-called “symbolic” attack, along with inmates and their family members. Iran remembers and honors them all.
+Mohammadamin Rouhbakhsh was a young conscript at Evin prison. He would’ve completed his service and discovered his future, if he hadn’t been #KilledByIsrael in a so-called “symbolic” attack, along with inmates and their family members. Iran remembers and honors them all.
